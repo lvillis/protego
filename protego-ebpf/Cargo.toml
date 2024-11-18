@@ -1,0 +1,17 @@
+[package]
+name = "protego-ebpf"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+protego-common = { path = "../protego-common" }
+
+aya-ebpf = { workspace = true }
+aya-log-ebpf = { workspace = true }
+
+[build-dependencies]
+which = { workspace = true }
+
+[[bin]]
+name = "protego"
+path = "src/main.rs"
