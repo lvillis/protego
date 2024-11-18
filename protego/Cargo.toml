@@ -6,6 +6,9 @@ edition = "2021"
 license = "MIT"
 
 [dependencies]
+protego-common = { version = "0.1.0", features = ["user"] }
+
+[patch.crates-io]
 protego-common = { path = "../protego-common", features = ["user"] }
 
 anyhow = { workspace = true, default-features = true }

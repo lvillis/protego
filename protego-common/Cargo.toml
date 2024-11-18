@@ -1,7 +1,9 @@
 [package]
 name = "protego-common"
+description = "🛡️ Protego is an eBPF-based security tool for Linux designed to enhance system protection."
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
 
 [features]
 default = []
