@@ -8,15 +8,5 @@ license = "MIT"
 [dependencies]
 protego-common = { version = "0.1.0" }
 
-aya-ebpf = { workspace = true }
-aya-log-ebpf = { workspace = true }
-
-[patch.crates-io]
-protego-common = { path = "../protego-common" }
-
 [build-dependencies]
 which = { version = "6.0.0", default-features = false }
-
-[[bin]]
-name = "protego"
-path = "src/main.rs"

@@ -30,3 +30,7 @@ panic = "abort"
 [profile.release.package.protego-ebpf]
 debug = 2
 codegen-units = 1
+
+[patch.crates-io]
+protego-common = { path = "protego-common" }
+protego-ebpf = { path = "protego-ebpf" }

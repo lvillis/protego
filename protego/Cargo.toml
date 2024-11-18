@@ -8,9 +8,6 @@ license = "MIT"
 [dependencies]
 protego-common = { version = "0.1.0", features = ["user"] }
 
-[patch.crates-io]
-protego-common = { path = "../protego-common", features = ["user"] }
-
 anyhow = { version = "1", default-features = false }
 aya = { version = "0.13.0", default-features = false }
 aya-log = { version = "0.2.1", default-features = false }
@@ -34,7 +31,7 @@ cargo_metadata = { version = "0.18.0", default-features = false }
 # Finally note that *any* usage of `artifact = ...` in *any* Cargo.toml in the workspace breaks
 # workflows with stable cargo; stable cargo outright refuses to load manifests that use unstable
 # features.
-protego-ebpf = { path = "../protego-ebpf" }
+protego-ebpf = { version = "0.1.0" }
 
 [[bin]]
 name = "protego"
