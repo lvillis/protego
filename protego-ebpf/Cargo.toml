@@ -1,16 +1,21 @@
 [package]
 name = "protego-ebpf"
+description = "🛡️ Protego is an eBPF-based security tool for Linux designed to enhance system protection."
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
 
 [dependencies]
-protego-common = { path = "../protego-common" }
+protego-common = { version = "0.1.0" }
 
 aya-ebpf = { workspace = true }
 aya-log-ebpf = { workspace = true }
 
+[patch.crates-io]
+protego-common = { path = "../protego-common" }
+
 [build-dependencies]
-which = { workspace = true }
+which = { version = "6.0.0", default-features = false }
 
 [[bin]]
 name = "protego"

@@ -10,7 +10,7 @@ default = []
 user = ["aya"]
 
 [dependencies]
-aya = { workspace = true, optional = true }
+aya = { version = "0.13.0", default-features = false }
 
 [lib]
 path = "src/lib.rs"
