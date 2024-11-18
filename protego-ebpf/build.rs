@@ -1,4 +1,3 @@
-use std::env;
 use which::which;
 
 /// Building this crate has an undeclared dependency on the `bpf-linker` binary. This would be
@@ -13,12 +12,6 @@ use which::which;
 ///
 /// [bindeps]: https://doc.rust-lang.org/nightly/cargo/reference/unstable.html?highlight=feature#artifact-dependencies
 fn main() {
-    let target_os = env::var("CARGO_CFG_TARGET_OS").unwrap_or_default();
-
-    if target_os == "linux" {
-        let bpf_linker = which("bpf-linker").unwrap();
-        println!("cargo:rerun-if-changed={}", bpf_linker.to_str().unwrap());
-    } else {
-        println!("cargo:warning=Skipping eBPF build steps on non-Linux OS");
-    }
+    let bpf_linker = which("bpf-linker").unwrap();
+    println!("cargo:rerun-if-changed={}", bpf_linker.to_str().unwrap());
 }

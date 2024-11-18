@@ -6,7 +6,14 @@ edition = "2021"
 license = "MIT"
 
 [dependencies]
-protego-common = { version = "0.1.0" }
+protego-common = { path = "../protego-common" }
+
+aya-ebpf = { workspace = true }
+aya-log-ebpf = { workspace = true }
 
 [build-dependencies]
-which = { version = "6.0.0", default-features = false }
+which = { workspace = true }
+
+[[bin]]
+name = "protego"
+path = "src/main.rs"
